@@ -1,0 +1,27 @@
+﻿<Window x:Class="BlitzStatistics.Home.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BlitzStatistics.Home"
+        mc:Ignorable="d"
+        Title="Blitz statistics" MinHeight="650" MinWidth="900" Height="650" Width="1000"
+		WindowStartupLocation="CenterScreen"
+		xmlns:search="clr-namespace:BlitzStatistics.AccountsSearch"
+		xmlns:history="clr-namespace:BlitzStatistics.AccountsSearchHistory"
+		xmlns:account="clr-namespace:BlitzStatistics.AccountInfo">
+    <Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="*" />
+			<RowDefinition Height="*"/>
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="250"/>
+			<ColumnDefinition Width="*"/>
+		</Grid.ColumnDefinitions>
+
+		<search:AccountsSearchView DataContext="{Binding AccountsSearchViewModel}" />
+		<history:AccountsSearchHistoryView DataContext="{Binding AccountsSearchHistoryViewModel}" Grid.Column="0" Grid.Row="1"/>
+		<account:AccountInfoView DataContext="{Binding AccountInfoViewModel}" Grid.RowSpan="2" Grid.Column="1" Grid.Row="0"/>
+	</Grid>
+</Window>

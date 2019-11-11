@@ -1,0 +1,175 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Assets\battles.scale-200.png" />
+    <None Remove="Assets\damage.scale-200.png" />
+    <None Remove="Assets\details.global.rating.scale-200.png" />
+    <None Remove="Assets\Flags\encyclopedia.nation.britain.icon.scale-200.png" />
+    <None Remove="Assets\Flags\encyclopedia.nation.britain.scale-200.png" />
+    <None Remove="Assets\Flags\encyclopedia.nation.china.icon.scale-200.png" />
+    <None Remove="Assets\Flags\encyclopedia.nation.china.scale-200.png" />
+    <None Remove="Assets\Flags\encyclopedia.nation.france.icon.scale-200.png" />
+    <None Remove="Assets\Flags\encyclopedia.nation.france.scale-200.png" />
+    <None Remove="Assets\Flags\encyclopedia.nation.germany.icon.scale-200.png" />
+    <None Remove="Assets\Flags\encyclopedia.nation.germany.scale-200.png" />
+    <None Remove="Assets\Flags\encyclopedia.nation.japan.icon.scale-200.png" />
+    <None Remove="Assets\Flags\encyclopedia.nation.japan.scale-200.png" />
+    <None Remove="Assets\Flags\encyclopedia.nation.unknown.icon.scale-200.png" />
+    <None Remove="Assets\Flags\encyclopedia.nation.unknown.scale-200.png" />
+    <None Remove="Assets\Flags\encyclopedia.nation.usa.icon.scale-200.png" />
+    <None Remove="Assets\Flags\encyclopedia.nation.usa.scale-200.png" />
+    <None Remove="Assets\Flags\encyclopedia.nation.ussr.icon.scale-200.png" />
+    <None Remove="Assets\Flags\encyclopedia.nation.ussr.scale-200.png" />
+    <None Remove="Assets\last.battle.time.scale-200.png" />
+    <None Remove="Assets\logo.jpg" />
+    <None Remove="Assets\logo.png" />
+    <None Remove="Assets\Mastery\vehicle.mark.first.scale-200.png" />
+    <None Remove="Assets\Mastery\vehicle.mark.master.scale-200.png" />
+    <None Remove="Assets\Mastery\vehicle.mark.second.scale-200.png" />
+    <None Remove="Assets\Mastery\vehicle.mark.third.scale-200.png" />
+    <None Remove="Assets\splash.png" />
+    <None Remove="Assets\Vehicles\vehicle.class.atspg.premium.small.scale-200.png" />
+    <None Remove="Assets\Vehicles\vehicle.class.atspg.small.scale-200.png" />
+    <None Remove="Assets\Vehicles\vehicle.class.heavy.premium.small.scale-200.png" />
+    <None Remove="Assets\Vehicles\vehicle.class.heavy.small.scale-200.png" />
+    <None Remove="Assets\Vehicles\vehicle.class.light.premium.small.scale-200.png" />
+    <None Remove="Assets\Vehicles\vehicle.class.light.small.scale-200.png" />
+    <None Remove="Assets\Vehicles\vehicle.class.medium.premium.small.scale-200.png" />
+    <None Remove="Assets\Vehicles\vehicle.class.medium.small.scale-200.png" />
+    <None Remove="Assets\wins.scale-200.png" />
+    <None Remove="Assets\xp.avg.scale-200.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="3.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="3.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="3.0.0" />
+    <PackageReference Include="WotBlitzStatician.Model" Version="1.0.0" />
+    <PackageReference Include="WotBlitzStatician.WotApiClient" Version="1.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\battles.scale-200.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\damage.scale-200.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\details.global.rating.scale-200.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Flags\encyclopedia.nation.britain.icon.scale-200.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Flags\encyclopedia.nation.britain.scale-200.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Flags\encyclopedia.nation.china.icon.scale-200.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Flags\encyclopedia.nation.china.scale-200.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Flags\encyclopedia.nation.france.icon.scale-200.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Flags\encyclopedia.nation.france.scale-200.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Flags\encyclopedia.nation.germany.icon.scale-200.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Flags\encyclopedia.nation.germany.scale-200.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Flags\encyclopedia.nation.japan.icon.scale-200.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Flags\encyclopedia.nation.japan.scale-200.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Flags\encyclopedia.nation.unknown.icon.scale-200.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Flags\encyclopedia.nation.unknown.scale-200.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Flags\encyclopedia.nation.usa.icon.scale-200.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Flags\encyclopedia.nation.usa.scale-200.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Flags\encyclopedia.nation.ussr.icon.scale-200.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Flags\encyclopedia.nation.ussr.scale-200.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\last.battle.time.scale-200.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\logo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Mastery\vehicle.mark.first.scale-200.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Mastery\vehicle.mark.master.scale-200.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Mastery\vehicle.mark.second.scale-200.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Mastery\vehicle.mark.third.scale-200.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\splash.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Vehicles\vehicle.class.atspg.premium.small.scale-200.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Vehicles\vehicle.class.atspg.small.scale-200.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Vehicles\vehicle.class.heavy.premium.small.scale-200.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Vehicles\vehicle.class.heavy.small.scale-200.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Vehicles\vehicle.class.light.premium.small.scale-200.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Vehicles\vehicle.class.light.small.scale-200.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Vehicles\vehicle.class.medium.premium.small.scale-200.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Vehicles\vehicle.class.medium.small.scale-200.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\wins.scale-200.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\xp.avg.scale-200.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+</Project>

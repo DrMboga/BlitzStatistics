@@ -1,0 +1,83 @@
+﻿<UserControl x:Class="BlitzStatistics.AccountInfo.AccountTanks.AccountTanksView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:BlitzStatistics.AccountInfo.AccountTanks"
+ 			 xmlns:logic="clr-namespace:BlitzStatistics.AccountInfo.Logic"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+	<UserControl.Resources>
+		<logic:NationToFlagPathConverter x:Key="NationsConverter" />
+		<logic:VehicleTypeToIconPathConverter x:Key="VehicleTypeConverter"/>
+		<logic:MarkOfMasteryConverter x:Key="MasteryConverter"/>
+	</UserControl.Resources>
+	<ScrollViewer VerticalScrollBarVisibility="Auto">
+		<ItemsControl ItemsSource="{Binding AccountTanks}">
+			<ItemsControl.ItemTemplate>
+				<DataTemplate>
+					<Border Background="#0C1A25" CornerRadius="10" Margin="0,5,0,5">
+						<Grid Margin="15,15,0,15">
+							<Grid.RowDefinitions>
+								<RowDefinition Height="Auto"/>
+								<RowDefinition Height="Auto"/>
+							</Grid.RowDefinitions>
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="160"/>
+								<ColumnDefinition Width="*"/>
+							</Grid.ColumnDefinitions>
+							<Border Width="160" Height="100" HorizontalAlignment="Left">
+								<Border.Background>
+									<ImageBrush ImageSource="{Binding Nation, Converter={StaticResource NationsConverter}}" Stretch="Fill"/>
+								</Border.Background>
+								<Image Source="{Binding PreviewImageUrl}" Stretch="Uniform"
+								   />
+							</Border>
+							<StackPanel Grid.Row="0" Grid.Column="1" Orientation="Vertical">
+								<Image Source="{Binding MarkOfMastery, Converter={StaticResource MasteryConverter}}" 
+								   Width="24" Height="24" Margin="5,5"/>
+								<StackPanel Orientation="Horizontal" Margin="0,4">
+									<Image Source="/Assets/battles.scale-200.png" Width="16" Height="16"/>
+									<TextBlock Text="{Binding Battles,StringFormat=N0}"
+										Foreground="{StaticResource ResourceKey=ContentForeground}" 
+										FontSize="12" HorizontalAlignment="Left" Margin="2,0"/>
+								</StackPanel>
+								<StackPanel Orientation="Horizontal" Margin="0,4">
+									<Image Source="/Assets/wins.scale-200.png" Width="16" Height="16"/>
+									<TextBlock Text="{Binding WinRate,StringFormat=N2}"
+										Foreground="{StaticResource ResourceKey=ContentForeground}" 
+										FontSize="12" HorizontalAlignment="Left" Margin="2,0"/>
+									<TextBlock Text="%"
+										Foreground="{StaticResource ResourceKey=ContentForeground}" 
+										FontSize="12" HorizontalAlignment="Left" Margin="1,0"/>
+								</StackPanel>
+								<StackPanel Orientation="Horizontal" Margin="0,4">
+									<Image Source="/Assets/damage.scale-200.png" Width="16" Height="16"/>
+									<TextBlock Text="{Binding AvgDamage,StringFormat=N0}"
+										Foreground="{StaticResource ResourceKey=ContentForeground}" 
+										FontSize="12" HorizontalAlignment="Left" Margin="2,0"/>
+								</StackPanel>
+							</StackPanel>
+							<StackPanel Grid.Row="1" Orientation="Horizontal" Grid.ColumnSpan="2">
+								<Image  Width="20" Height="20" Stretch="UniformToFill" >
+									<Image.Source>
+										<MultiBinding Converter="{StaticResource VehicleTypeConverter}" UpdateSourceTrigger="PropertyChanged">
+											<Binding Path="Type"/>
+											<Binding Path="IsPremium"/>
+										</MultiBinding>
+									</Image.Source>
+								</Image>
+								<TextBlock Text="{Binding TierRoman}"
+									   Foreground="{StaticResource ResourceKey=ContentForeground}" 
+										FontSize="14" FontWeight="Bold" HorizontalAlignment="Left" Margin="5,0"/>
+								<TextBlock  Text="{Binding Name}"
+									   Foreground="{StaticResource ResourceKey=ContentForeground}" 
+										FontSize="14" HorizontalAlignment="Left" Margin="5,0"/>
+							</StackPanel>
+						</Grid>
+					</Border>
+				</DataTemplate>
+			</ItemsControl.ItemTemplate>
+		</ItemsControl>
+	</ScrollViewer>
+</UserControl>
